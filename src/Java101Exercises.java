@@ -90,4 +90,54 @@ public class Java101Exercises {
         }
         return results;
     }
+
+    /**
+     * Find all of the factors for a given integer (int). The integer could be negative.
+     *
+     * Find Factors
+     * LEVEL: DIFFICULT
+     *
+     * @param num       The number to be factored
+     * @return          An Integer ArrayList of factors of num.
+     */
+    public static ArrayList<Integer> exercise061(int num) {
+        ArrayList<Integer> factors = new ArrayList<>();
+
+        // setup
+        boolean isNeg = false;
+        if (num < 0) {
+            num *= -1;
+            isNeg = true;
+        }
+
+        // initialize the limit
+        int limit = num/2;
+
+        int i = 2;
+        int pos = 0;
+        factors.add(pos, 1); // 1 is always a factor
+        pos++;
+        while (i <= limit) {
+            if (num%i == 0) {
+                factors.add(pos, i);
+                pos++;
+                if (i != num/i) {
+                    factors.add(pos, num/i);
+                }
+            }
+            limit = num/i;
+            i++;
+        }
+        if (num != 1) factors.add(num); // the target number is always a factor, but it could be 1
+
+        // add negatives
+        if (isNeg) {
+            int length = factors.size() * 2;
+            for (int j = 0; j < length; j += 2) {
+                factors.add(0, -1*factors.get(j));
+            }
+        }
+
+        return factors;
+    }
 }
