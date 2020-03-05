@@ -86,6 +86,25 @@ public class Java101Exercises {
     }
 
     /**
+     * Exercise 012 - Find Factors
+     * Find all of the factors for a given positive integer (int). The result needs to be sorted in ascending order.
+     *
+     * LEVEL: EASY
+     *
+     * @param num       The number to be factored
+     * @return          An Integer ArrayList of factors of num.
+     */
+    public static ArrayList<Integer> exercise012(int num) {
+        ArrayList<Integer> numbers = new ArrayList<>();
+        for (int i = 1; i <= num; i++){
+            if (num % i == 0){
+                numbers.add(i);
+            }
+        }
+        return numbers;
+    }
+
+    /**
      * Given an array of integers, return a new array such that each element at index i of the new array is the product
      * of all the numbers in the original array except the one at i.
      *
@@ -118,9 +137,12 @@ public class Java101Exercises {
     }
 
     /**
-     * Find all of the factors for a given integer (int). The integer could be negative.
+     * Exercise 061 - Find Factors Efficiently
+     * Find all of the factors for a given integer (int). The integer could be negative. The result needs to be sorted
+     * in ascending order.
      *
-     * Find Factors
+     * The solution must be able to find the factors for 2080046 in less than 200000 nano-seconds. (ms/1000000).
+     *
      * LEVEL: DIFFICULT
      *
      * @param num       The number to be factored
