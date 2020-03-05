@@ -105,6 +105,29 @@ public class Java101Exercises {
     }
 
     /**
+     * Exercise 013 - Real Integer sum Addends
+     * Given a two double parameters, return the nearest integer sum. If a number is half-way between to integers,
+     * round up for positive sums and down for negative sums.
+     *
+     * LEVEL: EASY
+     *
+     * @param p1    First real number
+     * @param p2    Second real number
+     * @return      Integer sum
+     */
+    public static int exercise013(double p1, double p2 ) {
+        double dSum = p1 + p2;
+        double offset = 0.5;
+        if (dSum < 0.0) {
+            dSum -= offset;
+        } else {
+            dSum += offset;
+        }
+        int sum = (int) dSum;
+        return sum;
+    }
+
+    /**
      * Given an array of integers, return a new array such that each element at index i of the new array is the product
      * of all the numbers in the original array except the one at i.
      *
