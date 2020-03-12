@@ -128,6 +128,37 @@ public class Java101Exercises {
     }
 
     /**
+     * Exercise 014 - Is it a number
+     * Given a string s, write a method (function) that will return true if its a valid single integer or floating
+     * point number or false if its not.
+     *
+     * LEVEL: EASY
+     *
+     * Valid examples, should return true:
+     * isDigit("3")
+     * isDigit("  3  ")
+     * isDigit("-3.23")
+     *
+     * should return false:
+     * isDigit("3-4")
+     * isDigit("  3   5")
+     * isDigit("3 5")
+     * isDigit("zero")
+     *
+     * @param stringToTest
+     * @return              True if number, false if not.
+     */
+    public static boolean isNumber014(String stringToTest) {
+        stringToTest.trim();
+        try {
+            Double.parseDouble(stringToTest);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
      * Given an array of integers, return a new array such that each element at index i of the new array is the product
      * of all the numbers in the original array except the one at i.
      *
