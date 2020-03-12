@@ -25,7 +25,7 @@ public class Java101Exercises {
      * @param b     Second number to add
      * @return      The sum
      */
-    public static int exercise001(int a, int b) {
+    public static int addInts001(int a, int b) {
         // add operands
         return a + b;
     }
@@ -41,7 +41,7 @@ public class Java101Exercises {
      * @param n
      * @return
      */
-    public static boolean exercise002(int[] nums, int n) {
+    public static boolean findTwoAddends002(int[] nums, int n) {
 
         // Check input
         if (nums == null || nums.length < 2) return false;
@@ -68,7 +68,7 @@ public class Java101Exercises {
      * @param op2           Second operand
      * @return              Result
      */
-    public static double exercise011(String operation, double op1, double op2) {
+    public static double preformIndicatedOperation011(String operation, double op1, double op2) {
 
         switch (operation) {
             case ("ADD"):
@@ -94,7 +94,7 @@ public class Java101Exercises {
      * @param num       The number to be factored
      * @return          An Integer ArrayList of factors of num.
      */
-    public static ArrayList<Integer> exercise012(int num) {
+    public static ArrayList<Integer> findFactors012(int num) {
         ArrayList<Integer> numbers = new ArrayList<>();
         for (int i = 1; i <= num; i++){
             if (num % i == 0){
@@ -115,7 +115,7 @@ public class Java101Exercises {
      * @param p2    Second real number
      * @return      Integer sum
      */
-    public static int exercise013(double p1, double p2 ) {
+    public static int getNearestIntegerToRealSum013(double p1, double p2 ) {
         double dSum = p1 + p2;
         double offset = 0.5;
         if (dSum < 0.0) {
@@ -125,6 +125,37 @@ public class Java101Exercises {
         }
         int sum = (int) dSum;
         return sum;
+    }
+
+    /**
+     * Exercise 014 - Is it a number
+     * Given a string s, write a method (function) that will return true if its a valid single integer or floating
+     * point number or false if its not.
+     *
+     * LEVEL: EASY
+     *
+     * Valid examples, should return true:
+     * isDigit("3")
+     * isDigit("  3  ")
+     * isDigit("-3.23")
+     *
+     * should return false:
+     * isDigit("3-4")
+     * isDigit("  3   5")
+     * isDigit("3 5")
+     * isDigit("zero")
+     *
+     * @param stringToTest
+     * @return              True if number, false if not.
+     */
+    public static boolean isNumber014(String stringToTest) {
+        stringToTest.trim();
+        try {
+            Double.parseDouble(stringToTest);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -140,7 +171,7 @@ public class Java101Exercises {
      * @return              An array of products of integers
      * @throws Exception    Invalid input should throw an exception
      */
-    public static List<Integer> exercise041(List<Integer> iList) throws Exception {
+    public static List<Integer> multiplyElementsOfList041(List<Integer> iList) throws Exception {
 
         // validate input
         if (iList == null || iList.isEmpty()) throw new Exception("NULL or empty Integer list.");
@@ -171,7 +202,7 @@ public class Java101Exercises {
      * @param num       The number to be factored
      * @return          An Integer ArrayList of factors of num.
      */
-    public static ArrayList<Integer> exercise071(int num) {
+    public static ArrayList<Integer> findFactorsEfficiently071(int num) {
         ArrayList<Integer> factors = new ArrayList<>();
 
         // setup
@@ -210,5 +241,77 @@ public class Java101Exercises {
         }
 
         return factors;
+    }
+
+    /**
+     * Exercise 072 - Roman numeral conversion
+     * Given a roman numeral in a string, convert it to an integer (int). Do not worry about any roman digits past
+     * M (1000).
+     *
+     * I = 1
+     * V = 5
+     * X = 10
+     * L = 50
+     * C = 100
+     * D = 500
+     * M = 1000
+     *
+     * LEVEL: DIFFICULT
+     *
+     * @param romanNumeral      The roman numeral to convert
+     * @return                  The equivalent integer
+     */
+    public static int convertRomanNumeral072(String romanNumeral) {
+
+        int total = 0;
+        int I = 1;
+        int V = 5;
+        int X = 10;
+        int L = 50;
+        int C = 100;
+        int D = 500;
+        int M = 1000;
+
+        char thePreviousChar = ' ';
+        for (int i = 0; i < romanNumeral.length(); i++) {
+            if (romanNumeral.charAt(i) == 'M'){
+                total += M;
+            } else if (romanNumeral.charAt(i) == 'D') {
+                total += D;
+            } else if (romanNumeral.charAt(i) == 'C') {
+                if (thePreviousChar == 'C') total += C;
+                else if (i < romanNumeral.length() - 1 && romanNumeral.charAt(i+1) == 'M'){
+                    total += M - C;
+                    i++;
+                } else if (i < romanNumeral.length() - 1 && romanNumeral.charAt(i+1) == 'D'){
+                    total += D - C;
+                    i++;
+                } else total += C;
+            } else if (romanNumeral.charAt(i) == 'L') {
+                total += L;
+            } else if (romanNumeral.charAt(i) == 'X') {
+                if (thePreviousChar == 'X') total += X;
+                else if (i < romanNumeral.length() - 1 && romanNumeral.charAt(i+1) == 'C'){
+                    total += C - X;
+                    i++;
+                } else if (i < romanNumeral.length() - 1 && romanNumeral.charAt(i+1) == 'L'){
+                    total += L - X;
+                    i++;
+                } else total += X;
+            } else if (romanNumeral.charAt(i) == 'V') {
+                total += V;
+            } else if (romanNumeral.charAt(i) == 'I') {
+                if (thePreviousChar == 'I') total += I;
+                else if (i < romanNumeral.length() - 1 && romanNumeral.charAt(i+1) == 'X') {
+                    total += X - I;
+                    i++;
+                } else if (i < romanNumeral.length() - 1 && romanNumeral.charAt(i+1) == 'V') {
+                    total += V - I;
+                    i++;
+                } else total += I;
+            }
+            thePreviousChar = romanNumeral.charAt(i);
+        }
+        return total;
     }
 }
