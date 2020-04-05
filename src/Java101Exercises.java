@@ -144,7 +144,6 @@ public class Java101Exercises {
      * @return
      */
     public static boolean findTwoAddends015(int[] nums, int n) {
-
         // Check input
         if (nums == null || nums.length < 2) return false;
 
@@ -156,6 +155,40 @@ public class Java101Exercises {
         }
 
         return false;
+    }
+
+    /**
+     * Exercise 016 - Count Inversions
+     * This problem was asked by Google.
+     *
+     * We can determine how "out of order" an array A is by counting the number of inversions it has. Two elements
+     * A[i] and A[j] form an inversion if A[i] > A[j] but i < j. That is, a smaller element appears after a larger
+     * element.
+     *
+     * Given an array, count the number of inversions it has. Do this faster than O(N^2) time.
+     *
+     * You may assume each element in the array is distinct.
+     *
+     * For example, a sorted list has zero inversions. The array [2, 4, 1, 3, 5] has three inversions: (2, 1), (4, 1),
+     * and (4, 3). The array [5, 4, 3, 2, 1] has ten inversions: every distinct pair forms an inversion.
+     *
+     * LEVEL: EASY
+     *
+     * @param nums  An array of integers
+     * @return  The number of inversions in the array.
+     */
+    public static int countInversionsInArray016(int[] nums) {
+        // Check input
+        if (nums == null || nums.length < 2) return 0;
+
+        // loop to find sums
+        int inversionCount = 0;
+        for (int i = 0; i < nums.length - 1; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] > nums[j]) inversionCount++;
+            }
+        }
+        return inversionCount;
     }
 
     /**
