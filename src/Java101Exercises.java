@@ -31,6 +31,56 @@ public class Java101Exercises {
     }
 
     /**
+     * Exercise 002 - Say Hello
+     *
+     * Given an input String, name; return a String with "Hello " appended in-front of name and "!" appended after name.
+     *
+     * LEVEL: BASIC
+     *
+     * @param name  A name
+     * @return      A greeting.
+     */
+    public static String sayHello002(String name) {
+        return "Hello " + name + "!";
+    }
+
+    /**
+     * Exercise 003 - Say Codeup
+     *
+     * Write a method to return an array of nine strings with the message below using asterisk.
+     *
+     *
+     *             * * * * *                 * *             * * * * * * *          * * * * * * * *     *                 *      * * * * * *
+     *           *           *            *       *          *             *        *                   *                 *      *           *
+     *         *               *       *             *       *              *       *                   *                 *      *            *
+     *       *                        *               *      *               *      *                   *                 *      *           *
+     *       *                        *               *      *               *      * * * * * * *       *                 *      * * * * * *
+     *       *                        *               *      *               *      *                   *                 *      *
+     *         *               *       *             *       *              *       *                    *               *       *
+     *           *           *            *       *          *             *        *                       *         *          *
+     *             * * * * *                 * *             * * * * * * *          * * * * * * * *            * * *             *
+     *
+     *
+     *
+     * LEVEL: BASIC
+     *
+     * @return      A String array with an asterisks drawing of CODEUP
+     */
+    public static String[] sayCodeup003() {
+        String[] message = new String[9];
+        message[0] = "             * * * * *                 * *             * * * * * * *          * * * * * * * *     *                 *      * * * * * *";
+        message[1] = "           *           *            *       *          *             *        *                   *                 *      *           *";
+        message[2] = "         *               *       *             *       *              *       *                   *                 *      *            *";
+        message[3] = "       *                        *               *      *               *      *                   *                 *      *           *";
+        message[4] = "       *                        *               *      *               *      * * * * * * *       *                 *      * * * * * *";
+        message[5] = "       *                        *               *      *               *      *                   *                 *      *";
+        message[6] = "         *               *       *             *       *              *       *                    *               *       *";
+        message[7] = "           *           *            *       *          *             *        *                       *         *          *";
+        message[8] = "             * * * * *                 * *             * * * * * * *          * * * * * * * *            * * *             *";
+        return message;
+    }
+
+    /**
      * Write a method with 3 parameters; a String and 2 doubles. The string will be an operation that the operation
      * needs to process on the two operands. Return the result if the operation. Return 0.0 if the operation is not
      * one of the four specified. The operation should be case sensitive.
