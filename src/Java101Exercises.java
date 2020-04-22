@@ -109,6 +109,21 @@ public class Java101Exercises {
     }
 
     /**
+     * Exercise 006 - is Equal
+     * Write a method that accepts two integers and returns the boolean value true if they are equal and returns the
+     * boolean value false if the are not equal.
+     *
+     * LEVEL: BASIC
+     *
+     * @param a     First integer
+     * @param b     Second integer
+     * @return      Boolean flag reflecting equality
+     */
+    public static boolean isEqual006(int a, int b) {
+        return (a == b);
+    }
+
+    /**
      * Write a method with 3 parameters; a String and 2 doubles. The string will be an operation that the operation
      * needs to process on the two operands. Return the result if the operation. Return 0.0 if the operation is not
      * one of the four specified. The operation should be case sensitive.
