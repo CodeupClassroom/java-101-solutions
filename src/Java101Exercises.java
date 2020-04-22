@@ -126,8 +126,7 @@ public class Java101Exercises {
     /**
      * Exercise 007 - is Greater Than
      * Write a method that accepts two doubles and returns the boolean value true if a is greater than b and returns
-     * the boolean value false if a is not greater than b.
-     *
+     * the boolean value false if a is not greater than
      * LEVEL: BASIC
      *
      * @param a     First integer
@@ -136,6 +135,18 @@ public class Java101Exercises {
      */
     public static boolean isGreaterThan007(double a, double b) {
         return (a > b);
+    }
+
+    /**
+     * Exercise 008 - Cubed
+     * Write a method that accepts a double and returns the number cubed ( times itself three times).
+     * LEVEL: BASIC
+     *
+     * @param a     The number
+     * @return      Boolean flag reflecting equality
+     */
+    public static double cube008(double a) {
+        return (a * a * a);
     }
 
     /**
