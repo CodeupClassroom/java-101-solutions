@@ -129,8 +129,8 @@ public class Java101Exercises {
      * the boolean value false if a is not greater than
      * LEVEL: BASIC
      *
-     * @param a     First integer
-     * @param b     Second integer
+     * @param a     First double
+     * @param b     Second double
      * @return      Boolean flag reflecting equality
      */
     public static boolean isGreaterThan007(double a, double b) {
@@ -147,6 +147,23 @@ public class Java101Exercises {
      */
     public static double cube008(double a) {
         return (a * a * a);
+    }
+
+    /**
+     * Exercise 009 - Positive Difference
+     * Write a method that accepts two integers and returns the positive difference between the two numbers.
+     *
+     * LEVEL: BASIC
+     *
+     * @param a     First integer
+     * @param b     Second integer
+     * @return      Boolean flag reflecting equality
+     */
+    public static int calcPositiveDifference009(int a, int b) {
+        // TODO: Write code here
+        int diff = a - b;
+        if (diff < 0) diff *= -1;
+        return diff;
     }
 
     /**
