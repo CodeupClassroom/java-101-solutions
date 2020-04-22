@@ -124,6 +124,21 @@ public class Java101Exercises {
     }
 
     /**
+     * Exercise 007 - is Greater Than
+     * Write a method that accepts two doubles and returns the boolean value true if a is greater than b and returns
+     * the boolean value false if a is not greater than b.
+     *
+     * LEVEL: BASIC
+     *
+     * @param a     First integer
+     * @param b     Second integer
+     * @return      Boolean flag reflecting equality
+     */
+    public static boolean isGreaterThan007(double a, double b) {
+        return (a > b);
+    }
+
+    /**
      * Write a method with 3 parameters; a String and 2 doubles. The string will be an operation that the operation
      * needs to process on the two operands. Return the result if the operation. Return 0.0 if the operation is not
      * one of the four specified. The operation should be case sensitive.
