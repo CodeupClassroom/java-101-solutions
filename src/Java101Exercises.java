@@ -102,7 +102,7 @@ public class Java101Exercises {
      *
      * @param a     First String
      * @param b     Second String
-     * @return      The sum
+     * @return      The joined strings
      */
     public static String concatenateStrings005(String a, String b) {
         return a + " " + b;
@@ -131,7 +131,7 @@ public class Java101Exercises {
      *
      * @param a     First double
      * @param b     Second double
-     * @return      Boolean flag reflecting equality
+     * @return      Boolean flag reflecting the relationship
      */
     public static boolean isGreaterThan007(double a, double b) {
         return (a > b);
@@ -143,7 +143,7 @@ public class Java101Exercises {
      * LEVEL: BASIC
      *
      * @param a     The number
-     * @return      Boolean flag reflecting equality
+     * @return      The cubed value of the number.
      */
     public static double cube008(double a) {
         return (a * a * a);
@@ -157,13 +157,26 @@ public class Java101Exercises {
      *
      * @param a     First integer
      * @param b     Second integer
-     * @return      Boolean flag reflecting equality
+     * @return      The positive difference between the two numbers
      */
     public static int calcPositiveDifference009(int a, int b) {
-        // TODO: Write code here
         int diff = a - b;
         if (diff < 0) diff *= -1;
         return diff;
+    }
+
+    /**
+     * Exercise 010 - Remainder
+     * Write a method that accepts two integers and returns the remainder from the division .
+     *
+     * LEVEL: BASIC
+     *
+     * @param a     Number to be divided
+     * @param b     Number to divide by
+     * @return      remainder from the division
+     */
+    public static int calcRemainder010(int a, int b) {
+        return (a%b);
     }
 
     /**
